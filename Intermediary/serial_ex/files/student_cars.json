@@ -1,0 +1,65 @@
+{
+	"Students":[
+		{
+			"id": 0,
+			"name": "Ion",
+			"sex": "M",
+            "grade": "8.5"
+		},
+
+		{
+			"id": 1,
+			"name": "lessie",
+			"race": "bulldog"
+		}
+	],
+
+	"Cars":[
+		{
+			"id": 0,
+			"model": "Dacia",
+            "year": "2022",
+            "price": 17000,
+
+		},
+
+		{
+			"id": 1,
+			"name": "ariel",
+			"race": "brittish short-hair"
+		}
+	]
+}
+
+
+//
+//students = [
+//    {"name": "Ion", "sex": "M", "grade": "8.5"},
+//    {"name": "Maria", "sex": "F", "grade": "9.2"},
+//    {"name": "Steve", "sex": "M", "grade": "7.8"},
+//    {"name": "Sofia", "sex": "F", "grade": "9.6"},
+//    {"name": "Alex", "sex": "M", "grade": "8.9"},
+//    {"name": "Ioana", "sex": "F", "grade": "8.3"},
+//    {"name": "Ana", "sex": "M", "grade": "9.8"},
+//    {"name": "Olivia", "sex": "F", "grade": "9.1"},
+//    {"name": "Lucas", "sex": "M", "grade": "8.2"},
+//    {"name": "Eva", "sex": "F", "grade": "9.5"}
+//]
+//
+//
+//
+//cars = [
+//    {"id": 0, "model": "Dacia", "year": "2022", "price": 17000},
+//    {"id": 1, "model": "Audi", "year": "2022", "price": 50000},
+//    {"id": 2, "model": "Mercedes", "year": "2022", "price": 70000},
+//    {"id": 3, "model": "BMW", "year": "2022", "price": 60000},
+//    {"id": 4, "model": "Tesla", "year": "2022", "price": 90000},
+//    {"id": 5, "model": "Toyota", "year": "2022", "price": 20000},
+//    {"id": 6, "model": "Ford", "year": "2022", "price": 25000},
+//    {"id": 7, "model": "Honda", "year": "2022", "price": 22000},
+//    {"id": 8, "model": "Chevrolet", "year": "2022", "price": 18000},
+//    {"id": 9, "model": "Mazda", "year": "2022", "price": 23000}
+//]
+//
+//students_json = {"students": students}
+//cars_json = {"cars": cars}
