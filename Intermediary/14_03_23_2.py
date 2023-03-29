@@ -1,17 +1,17 @@
 import  datetime
 
-def disable_at_night(func):
-    def wrapper():
-        if 7 <= my_hour < 22:
-            func()
-    return wrapper
-
-def run_only_between(from = 7, to = 22):
-    def decorator(func):
-        def wrapper():
-            if from_ <= my_hour < to_:
-                func()
-        return wrapper
+# def disable_at_night(func):
+#     def wrapper():
+#         if 7 <= my_hour < 22:
+#             func()
+#     return wrapper
+#
+# def run_only_between(from = 7, to = 22):
+#     def decorator(func):
+#         def wrapper():
+#             if from_ <= my_hour < to_:
+#                 func()
+#         return wrapper
 ### run between 7 - 22
 @disable_at_night
 
