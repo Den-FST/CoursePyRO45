@@ -1,7 +1,8 @@
 # write a function which will take as input a number and output "YES" is number is odd and "NO"
 # if number is even
 import re
-from typing import List
+from math import sqrt
+from typing import List, Counter
 
 
 def even_or_odd(n):
@@ -24,9 +25,8 @@ def fizz_buzz(n):
 
 
 
-
 # scrieti o functie care calculeaza factorialul numarului natural n (n! = n*(n-1)*(n-2)* ... * 1 , where 0! = 1)
-def factorial(n: int):
+def factorial(n: int) -> int:
     i = 0
     res = 1
     for i in range(1, n+1):
@@ -37,9 +37,16 @@ def factorial(n: int):
 
 # scrieti o functie care determina daca numarul intreg n este sau nu prim
 def prim(n):
-    if n % 2 == 0:
-        return print(f"Numarul {n} este prim")
-    return print(f"Numarul {n} nu este prim")
+
+    for i in range(2, int(sqrt(n)) + 1):
+        if n % i == 0:
+            return print(f"Numarul {n} nu este prim")
+
+    return print(f"Numarul {n} este prim")
+#     if n % 2 == 0:
+#         return print(f"Numarul {n} este prim")
+#     return print(f"Numarul {n} nu este prim")
+
 
 
 def anagrame(word: str, list_of_words: List[str]) -> List[str]:
@@ -53,6 +60,13 @@ def anagrame(word: str, list_of_words: List[str]) -> List[str]:
             anagrams.append(w)
     return anagrams
 
+    # dict_word = Counter[word]
+    # print(dict_word)
+    # result = []
+    # for cuvint in list_of_words:
+    #     if Counter[cuvint] == dict_word:
+    #         result.append(cuvint)
+    # return result
 
 
 if __name__ == '__main__':
@@ -69,6 +83,8 @@ if __name__ == '__main__':
     for i in range(0, i):
         a -= 1
         anagr = input(f"Adauga in lista de cuvinte inca {a} : ")
+        if anagr == 'q':
+            exit()
         l.append(anagr)
 
     print(anagrame(anagrw, l) )

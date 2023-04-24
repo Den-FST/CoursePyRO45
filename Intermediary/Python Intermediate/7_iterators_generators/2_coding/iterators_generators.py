@@ -38,11 +38,13 @@ def normal_iteration():
 
 
 def is_prime(number):
-
-    for i in range(2, sqrt(number) + 1):
+    if number < 2:
+        return False
+    for i in range(2, int(sqrt(number)) + 1):
         if number % i == 0:
             return False
     return True
+
 
 
 def get_n_primes(n):
