@@ -1,0 +1,16 @@
+Algorithms and Data Structures.
+
+Total 28 h
+
+1. Algorithms and their representation (3h)
+2. Recursion (4h)
+3. Computational complexity (3h)
+4. Binary Search (Linear Search + Binary Search) (3h)
+5. Sorting algorithms(Bubble Sort, Heap Sort, Insertion Sort, Merge Sort) (8h)
+6. Data structures(List, Stack, Queue, Binary Trees, Heaps) (7h)
+
+Final: Test + FeedBack
+
+For block schema diagram:
+https://www.diagrameditor.com/
+

@@ -1,65 +1,23 @@
 "Write a function which will sort an array of numbers"
 from typing import List
-from functools import reduce
 
 "Write an algorithm to sort the numbers"
-a = [4,7,9,1,2,5,8,0]
-
-def sort_array():
-    for step in range(len(a)):
-        min_index=step
-        for index_array in range(step+1,len(a)):
-            if a[min_index] > a[index_array]:
-                min_index = index_array
-        a[step], a[min_index] = a[min_index], a[step]
-        print(a)
-
-
-a=[2,3,1,5]
-a=[2,1,3,5]
-
-def bubble_sort(a):
-    sortat = True
-    for step in range(len(a)):
-        for index in range(len(a)-step-1):
-            if a[index] > a[index+1]:
-                sortat = False
-                a[index], a[index+1]= a[index+1], a[index]
-        if sortat == True:
-            return
-
-# algoritm imbunatatit
-# space = O(3)
-# time best = O((len(a)-1)*1 = O(len(a))
-# average = O(n^2)
-# worst = O(n^2)
-
-# space = O(2)
-# time = O(len(a)*(len(a)-1)) = O(len(a)^2)
-
-
-a=[4,7,9,1,2,5,0]
-# a=[0,7,9,1,2,5,4]
-# a=[0,1,9,7,2,5,4]
 def sort_array(a):
-    for step in range(len(a)):
-        min_index=step
-        for index_array in range(step+1,len(a)):
-            if a[min_index]>a[index_array]:
-                min_index=index_array
-        a[step], a[min_index] =a[min_index], a[step]
-        print(a)
+    pass
 
-#time complex O(len(a)*(len(a)-1))=O(len(a)^2)
-# best case O(n^2)
-# average case O(n^2)
-# worst case O(n^2)
-
-# space complex O(3)
 
 "Write a function which will search for a specific element in an array"
 def find_elem(a: List[int], elem) -> int:
-    pass
+    st, fn = 0, len(a)-1
+    while(st<=fn):
+        mid = (st+fn)//2
+        if a[mid] == elem:
+            return mid
+        elif a[mid]> elem:
+            fn = mid-1
+        else:
+            st = mid+1
+
 
 
 "Write a function which will search for an element in a sorted  array"
@@ -69,14 +27,32 @@ def find_elem_sorted(a: List[int], elem) -> int:
 "Write a function which will take a sorted array and which " \
 "tell the position where  to insert 'elem'  in order to keep a SORTED"
 def my_bisect(a: List[int], elem) -> int:
-    pass
+    st, fn = 0, len(a)
+    while st < fn:
+        mid = (st+fn) // 2
+        if a[mid] <= elem:
+            st = mid+1
+        else:
+            fn = mid
+    return st
+
+
 
 
 "We have a system that print on each day: '1' if system is valid, and '0' if system is invalid  "
-"Initialy the system is valid. Print the day on which the system is invalidated" \
+"Initially the system is valid. Print the day on which the system is invalidated" \
 "Ex 1,1,1,1,0,0,0,0 , in this case algo should return 5"
-def find_day(a: List[int], elem) -> int:
-    pass
+def find_day(a: List[int]) -> int:
+    st, fn = 0, len(a)
+    while(st<= fn):
+        mid = (st+fn)//2
+        if a[mid] == 1:
+            if mid+1 < len(a) and a[mid+1] == 0:
+                return mid+2
+            st = mid+1
+        else:
+            fn = mid-1
+    return -1
 
 
 '''
@@ -85,9 +61,13 @@ https://python.en.sdacademy.pro/coursebook/algorithms_and_data_structures/binary
 1. solve find_elem_sorted with bisect library
 1.solve my_bisect function with bisect library
 '''
-
-
-
-
-if __name__ == "__main__":
-    # sort_array()
+import bisect
+if __name__ == '__main__':
+    pass
+    a= [1,2,5,8,9,12,31]
+    # print(my_bisect(a,31))
+    # print(bisect.bisect_right(a,31))
+    # print(bisect.bisect_left(a,31))
+    print(find_elem(a,31))
+    # a = [1,1,1,1,0,0,0]
+    # print(find_day(a))

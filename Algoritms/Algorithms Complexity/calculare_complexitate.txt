@@ -1,0 +1,48 @@
+1.
+
+a = [1,2,3,4,5,,,,n]
+def suma_array(a):
+    cum_sum = 0
+    for elem in a: //se executa de n ori
+        cum_sum += elem
+    return cum_sum
+
+
+complexitatea spatiu = O(1)
+complexitate timp = O(2N + 2) = O(N)
+2.
+
+def pereche(a,b)
+    for i in len(a): // se executa de len(a) = A
+        for j in len(b): // se executa de len(b) = B
+            print(i,j)
+
+complexitatea spatiu = O(1)
+complexitate timp = O(A*B) = B+B+B....+B de A ori = A*B (3+3 = 3*2)
+cand i = 0, al doilea for -> se executa de B
+i = 1, B
+.
+.
+.
+i = A, al doilea for de B
+
+3.
+def pereche_modificata(a)
+    for i in len(a): // se executa de len(a) = A
+        for i+1 in len(a):
+            print(i,j)
+
+cand i = 0, al doilea for -> se executa de A-1
+i = 1, A-2
+.
+.
+i = A-1, 1
+i = A, al doilea for de 0 ori
+
+A-1 + A-2 + ... + 1 + 0} executata de A ori -> ((A-1)*A)/2 = O(0.5*A^2-0.5*A) = O(A^2)
+
+4.
+[1,2,4,5,7] -> [1,2] -> [1] - wow
+O(logN)
+
+
