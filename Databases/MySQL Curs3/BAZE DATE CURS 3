@@ -1,0 +1,18 @@
+BAZE DATE CURS 3
+
+Limbajul de Manipulare a Datelor (LMD/ in eng DML - Data Manipulation Language)
+
+Comenzi LMD:
+
+- actualizarea datelor: INSERT, UPDATE, DELETE
+- interogari (query): SELECT (ne ajuta la preluarea datelor dintr-o tabela)
+
+[CRUD - CREATE, READ, UPDATE, DELETE]
+comenzile pentru query-uri:		
+		INSERT SELECT UPDATE  DELETE
+
+
+Pentru a rula un query, avem doua variante:
+
+1. Selectam blocul de cod/ tot query-ul si apasam pe primul fulger
+2. Mergem pe linia unui query/ in interiorul unui bloc de cod si selectam al doilea fulger

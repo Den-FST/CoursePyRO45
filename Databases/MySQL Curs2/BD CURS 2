@@ -1,0 +1,172 @@
+BD CURS 2
+
+SGBD - au doua limbaje
+
+LDD - Limbajul de descriere al datelor. In engleza: DDL
+LMD - Limbajul de manipulare al datelor. In engleza DML
+
+
+
+Comenzi LDD/ DDL
+
+- CREATE/ DROP table/ database - cream tabele/ baza de date (CREATE)
+							   - stergem tabele/ baza de date (DROP)
+
+- ALTER table - ne ajuta sa modificam structura tabelelor deja create
+- CREATE/ DROP view - creare/ stergere tabele virtuale 
+- GRANT CONNECT - accordam acces unui user la o baza de date
+
+Comenzi LMD/ DML
+
+- actualizarea datelor dintr-o tabela: INSERT, UPDATE, DELETE
+- pentru interogari (query) pe baza de date: SELECT - preluarea datelor dintr-o tabela
+- alte functionalitati predefinite: SUM, AVERAGE, etc.
+
+CRUD - Create, Read, Update, Delete
+	   INSERT, SELECT, UPDATE, DELETE
+
+La nivel de server:
+- bazele de date (BD) sunt niste foldere/ directoare
+- tabelele reprezinta fisiere
+
+Cand cream tabele/ bd - trebuie sa tinem cont de restrictiile impuse de sistemului de operare
+
+Restrictii:
+- folosim doar litere mici
+produs = Produs
+- nu putem folosi spatii sau urmatoarele caractere . / \
+- atentie la cuvintele rezervate, de ex: nu putem crea o baza de date cu denumirea database.
+[CREATE DATABASE]
+- nu putem doar cifre - folosim caractere alfanumerice
+- intotdeauna numele incepe cu o litera
+NU: 1234, 1produs, 2produs, tabela mea
+DA: produs, produs1, produs2, tabelamea
+- putem folosi _. de ex: tabela_mea
+- este recomandat ca numele tabelelor sa fie la singural. Este ok sa avem si la plural, dar nu este ok sa avem combinatii singural - plural.
+- in cadrul serverului bazele de date sunt unice.
+- in cadrul bazelor de date, numele tabelelor sunt unice
+
+In cadrul tabelelor putem folosi doua "denumiri" in momentul crearii lor:
+
+- denumire absoluta - daca nu suntem "intr-o baza de date" cand cream o tabela, vom crea de forma:
+<nume_bd>.<nume_tabela>
+
+CREATE TABLE magazin.produs()
+
+- denumire relativa - daca suntem "intr-o baza de date":
+- pentru a folosi o baza de date, folosim comanda USE <nume_bd>
+
+ex: USE magazin;
+CREATE TABLE magazin()
+
+
+
+TIPURI DE DATE
+
+
+siruri de caractere:
+
+produs
+produs bun
+produs de nota 10
+foarte bun
+
+CHAR(lungime_maxima)
+CHAR(13) - pentru tipul de data CHAR(13), oricate elemente s-ar adauga, memoria va fi mereu alocata pentru numarul maxim
+CHAR(10)
+masina - 6 caractere, folosind CHAR(10), mi se va aloca memorie pentru 10 caractere, chiar daca eu am un cuvant mai mic de 10 caractere
+
+
+VARCHAR(lungime_maxima)
+VARCHAR(13) - se poate aloca memorie pentru MAXIM 13 caractere, dar memoria alocata va fi de fapt pentru cate caractere se adauga
+VARCHAR(13)
+masina - 6 caractere - se va aloca fix pentru 6 caractere
+
+
+BLOB - Binary Long Object - fisiere encodate
+
+TINYINT => -128 -> 127 (tip de data signed - putem aveam si valori negative)
+TINYINT UNSIGNED (fara semn, avem doar numere pozitive) => 0 -> 255
+
+INT(5) - numarul maxim de cifre va fi 5 => 99999
+DOUBLE(8, 3) - maxim 8 cifre, dintre care 3 sunt zecimale
+de exemplu, numarul maxim pe care il putem avea este: 99999.
+
+DATE: 
+- adaugare sub forma de string: '2023-05-16'
+- adaugare sub forma de date: 20230516
+
+ENUM - putem aveam anumite valori "predefinite"
+status_produs ENUM('in stoc', 'lipsa stoc')
+status_comanda ENUM('Platita', 'In prelucrare', 'Expediata', 'Livrata')
+
+SET ~ ENUM
+culoare SET('rosu', 'alb', 'negru')
+
+BOOLEAN = valoare de adevar TRUE/ FALSE (in baza de date vom avea 1/ 0)
+
+
+INDECSI:
+
+- ne ajuta sa adaugam restrictii: UNIQUE, PRIMARY KEY, FOREGIN KEY
+- ne ajuta pentru optimizari a memoriei/ vitezei: INDEX
+- indecsii ne ajuta dar nu trebuie sa abuzam de ei
+
+
+Sintaxa de creare a unei BD
+CREATE DATABASE curs2;
+
+Pentru a folosi o anume baza de date:
+USE curs2;
+
+Sintaxa creare tabela
+
+CREATE TABLE <nume_tabela> (
+	<nume_atribut1> <tip_atribut1> [NULL/ NOT NULL UNIQUE PRIMARY KEY AUTO_INCREMENT]*,
+	<nume_atribut2> <tip_atribut2>,
+	etc...,
+	<constrangeri>*
+);
+
+*optionale
+
+- auto_increment: cauta valoarea maxima a unei linii (atribut), iar noua inregistrare va avea valoarea numarul maxim a liniei (atributului) +1
+- el se asociaza doar unui PRIMARY KEY de tip INT
+
+produse primary key auto_increment
+
+id    produs
+1 	  laptop
+2 	  tastatura
+3 	  mouse
+4 	  casti
+5     monitor
+
+
+id    produs
+1 	  laptop
+				- produsul 2 tastatura nu mai face parte din oferta magazinului
+3 	  mouse
+4 	  casti
+5     monitor
+6     PC
+7     mousepad
+
+NU POT CREA O CONEXIUNE INTRE DOUA COLOANE, DACA NU AU ACELASI TIP DE DATA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

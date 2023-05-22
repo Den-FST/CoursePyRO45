@@ -1,0 +1,124 @@
+BD Curs 1 - teorie
+
+Bazele de date - o multitudine de date ce sunt structurate la nivel de nivel de linii si coloane
+
+ - in acest fel, ele ne sunt usor de folosit 
+ ex: un fisier excel poate simula un fel de baza de date iar tabele din acesta sunt reprezentate de catre sheet-uri
+ - pentru un user este mult mai usor sa aiba toate datele structurat intr-o baza de date. El poate actualiza, accesa, poate adauga date noi, poate sterge date, etc - in functie de accesul oferit in cadrul bazei de date
+
+ - user-ul root: are access la toate functiile unei baze de date, poate face orice pe o baza de date. 
+
+ Date vs informatii
+
+ ex de date: 40
+ informatie = date prelucrate. De ex: Masa are 40 de cm. Afara sunt 40 de grade.
+
+ Datele daca nu li se ofera un context, nu ne ajuta foarte mult.
+
+
+ Baze de date RELATIONALE
+
+ - SGBD: Sistem de gestionare a bazelor de date. In engleza il veti intalni ca DBMS - Database Management System
+
+ - exemple de SGBD: SQL Server (SSMS), Oracle, MySQL Workbench, PostgreSQL, DBeaver, etc. 
+ - ce este SGBD: tool-ul/ IDE-ul pe care-l folosim pentru a manipula informatiile din bazele de date. 
+ - SGBD reprezinta interfata dintre useri si informatiile stocate
+
+ 
+ RELATII
+
+3 tipuri de relatii
+
+1. One-to-One
+2. One-to-Many
+3. Many-to-Many
+
+1. One-to-One = unei inregistrari (linii) din tabela (entitatea) A ii corespunde o singura inregistrare (linie) din tabela (entitatea) B, iar unei inregistrari (linii) din tabela (entitatea) B ii corespunde o singura inregistrare (linie) din tabela (entitatea) A.
+
+Exemple:
+
+persoana - ci
+masina - talon
+persoana - permis
+angajat - badge/ legitimatie
+student - carnet de note
+firma - certificat de inregistrare
+
+2. One-to-Many = unei inregistrari din tabela A, ii corespund mai multe inregistrari din tabela B, iar unei inregistrari din tabela B ii corespunde o singura inregistrare din tabela A.
+
+Exemple:
+
+departament - angajat
+mama - copil
+diriginte - clasa
+clasa - elev
+produs - review
+
+3. Many-to-Many = unei inregistrari din tabela A ii corespund mai multe inregistrari din tabela B, iar unei inregistrari din tabela B ii corespund mai multe inregistrari din tabela A.
+- exista doar in teorie, in practica este implementata folosind 2 relatii One-to-Many, folosind o tabela de legatura.
+
+
+NORMALIZARE - proces prin care eliminam anomaliile din baza de date
+Sunt 5 forme normale (FN)
+
+1. FN1
+2. FN2
+3. FN3
+
+1. FN1 
+
+- exista doar valori atomice
+- nu exista grupuri repetitive
+
+
+produs: id_review: 12, 13, 14 ------------- G R E S I T
+id_review se va descompune la nivel atomic in:
+
+ id_review  ----------- C O R E C T
+ 12
+ 13
+ 14
+
+
+
+2. FN2
+
+- se respecta FN1
+- nu exista dependinte partiale - se aplica DOAR cand avem cheie primara compusa
+- toate atributele non cheie depind in totalitate de cheia primara - in loc de <<depinde in totalitate>> - vom mai gasi si formularea - DEPINDE FUNCTIONAL COMPLET
+
+
+
+3. FN3
+
+- se respecta FN2
+- fara dependinte tranzitive
+dependinta tranzitiva = situatie cand un atribut non cheie depinde de un alt atribut non cheie care la randul lui depinde de cheia primara
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
